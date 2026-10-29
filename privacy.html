@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="What information ZZveenus and its dashboard handle, and how it is used.">
+  <title>Privacy — ZZveenus</title>
+  <link rel="icon" href="/zzveenus.png?v=2" type="image/png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="doc-page">
+  <header class="doc-header"><a class="brand" href="index.html" aria-label="ZZveenus home"><img class="brand-logo" src="zzveenus.png" alt="" onerror="this.hidden=true"><span>ZZveenus</span></a><nav class="doc-nav" aria-label="Page navigation"><a href="index.html">Home</a><a href="https://zzveenus.duckdns.org/commands">Commands</a><a href="terms.html">Terms</a></nav></header>
+  <main class="doc-shell legal-content">
+    <section class="doc-lead"><div class="eyebrow">PRIVACY</div><h1>Privacy policy</h1><p>This page explains what ZZveenus handles when it runs in Discord and when you sign in to use the web dashboard.</p><p class="last-updated">Last updated: October 25, 2026</p></section>
+    <h2>Information used by the bot</h2>
+    <p>ZZveenus processes Discord server and member identifiers needed to run commands and features. Depending on the features a server uses, its configuration can include channel and role IDs, Steam discount and keyword-filter settings, tracked YouTube channel and video IDs, game-code alert settings, moderation and vote-kick settings, announcement settings, whether sticky roles are enabled, and the server blacklist setting.</p>
+    <p>When sticky roles are enabled, ZZveenus stores member IDs, role IDs, and timestamps needed to restore eligible roles if a person rejoins. Sticky-role records are stored separately from a server’s main configuration and are pruned after 90 days.</p>
+    <p>The bot also stores temporary Top.gg vote-pass information for bulk role actions. This includes a Discord user ID and the pass expiration time.</p>
+    <h2>Messages and command content</h2>
+    <p>ZZveenus does not save a general archive of server messages. The Steam keyword filter checks Steam sale text against the server’s configured keywords. `/filter test` checks the sentence you submit against those keywords to report whether it matches.</p>
+    <p>The bot has a private-message command listener for its owner account. Content handled by that listener is held in temporary process memory for the relevant interaction; this site policy does not describe it as a general message-logging feature.</p>
+    <h2>Dashboard sign-in and access</h2>
+    <p>The dashboard uses Discord OAuth sign-in with the identity and server-list access needed to identify you and servers you belong to. While signed in, the dashboard keeps your Discord user identifier, display details, OAuth credentials, and security tokens in temporary server memory. Sessions expire after eight hours without activity, and a bot process restart clears them. OAuth flow state, rate-limit counters, and short-lived server-list caches are also held in memory.</p>
+    <p>For regular server settings, the dashboard checks that ZZveenus is in the server and your Discord account owns it or has Manage Server or Administrator permission. The bot owner account has a separate restricted view across all bot servers and saved blacklisted servers. That view only exposes basic server information and the blacklist control; it does not expose other server settings. Each blacklist save runs the bot’s blacklist check immediately and is logged to the bot console with the owner account ID, server name and ID, and blacklist state.</p>
+    <h2>Where information is stored</h2>
+    <p>Bot configuration is stored as server-specific files on the bot host. Sticky-role data and temporary vote-pass records use separate files. Server owners can use `/request-deletion` to ask the bot owner to remove the main configuration file; this request is reviewed and carried out manually, not automatically. Sticky-role data is a separate file, so mention it in your support ticket if you also want that file removed.</p>
+    <h2>Service providers and external requests</h2>
+    <p>Operating the bot and dashboard involves Discord for login and bot services, Top.gg for vote verification, Steam services for public profile and sale information, YouTube services for channel/video information, and public game-code feed providers for code alerts. Requests to those services are made when a corresponding feature needs them. Their own privacy policies and service terms apply to information they process.</p>
+    <h2>Retention and security</h2>
+    <p>Configuration is kept while it is needed to provide the bot’s features or until the bot owner removes it. Dashboard sessions and other temporary authentication state are held in memory and expire as described above. Reasonable technical protections are used, but no internet service can promise absolute security.</p>
+    <h2>Your choices and questions</h2>
+    <p>Server administrators can change supported settings with bot commands or the dashboard, and can disable supported features. To ask about a server’s data or request its removal, join the <a href="https://discord.com/invite/rjfcsgmcDd">support server</a> and open a ticket in <b>#make-ticket</b>. Only a server owner can submit `/request-deletion`.</p>
+    <h2>Changes to this policy</h2>
+    <p>This policy may be updated when the bot or dashboard changes. The date at the top indicates the latest revision.</p>
+  </main>
+</body>
+</html>
+
